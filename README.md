@@ -4,6 +4,28 @@ Amazon e-commerce AI agent skills, powered by the [Pangolinfo MCP server](https:
 
 Each skill is a self-contained `SKILL.md` that teaches an AI agent (Claude Code, Cursor, Cline, Windsurf, Codex, and other MCP-capable clients) a complete Amazon research workflow — when to trigger it, which Pangolinfo MCP tools to chain, and how to turn raw data into a usable answer.
 
+## Quick install — copy this to your AI assistant
+
+Don't unzip anything yourself. Just paste the block below to the AI agent you already use (Claude Code, Cursor, Cline, …) and it will install all 6 skills into the right place for your client.
+
+> **English**
+>
+> Please install the Pangolinfo Amazon skills for me:
+> 1. Download this bundle: `https://github.com/pangolinfo/pangolinfo-skills/archive/refs/heads/main.zip`
+> 2. Unzip it — inside `pangolinfo-skills-main/` there are 6 skill folders (`amazon-product-explorer`, `pangolinfo-amazon-niche`, `pangolinfo-amazon-scraper`, `amazon-daily-competitor-radar`, `amazon-listing-optimization`, `pangolinfo-ai-serp`), each containing a `SKILL.md`.
+> 3. Copy those 6 skill folders into the skills directory that YOUR client loads skills from (for Claude Code that's `~/.claude/skills/`). Skip `README.md`, `LICENSE`, and `.gitignore`.
+> 4. These skills call the Pangolinfo MCP server — confirm it's connected and that I have a Pangolinfo API key (get one at https://www.pangolinfo.com).
+> 5. When done, list the 6 skills you installed so I can confirm.
+
+> **中文**
+>
+> 请帮我安装 Pangolinfo 亚马逊 skills：
+> 1. 下载这个压缩包：`https://github.com/pangolinfo/pangolinfo-skills/archive/refs/heads/main.zip`
+> 2. 解压 —— `pangolinfo-skills-main/` 里有 6 个 skill 文件夹（`amazon-product-explorer`、`pangolinfo-amazon-niche`、`pangolinfo-amazon-scraper`、`amazon-daily-competitor-radar`、`amazon-listing-optimization`、`pangolinfo-ai-serp`），每个里面有一个 `SKILL.md`。
+> 3. 把这 6 个 skill 文件夹复制到**你所在客户端**加载 skills 的目录（Claude Code 是 `~/.claude/skills/`）。跳过 `README.md`、`LICENSE`、`.gitignore`。
+> 4. 这些 skill 依赖 Pangolinfo MCP 服务 —— 确认它已连接、且我有 Pangolinfo API key（到 https://www.pangolinfo.com 获取）。
+> 5. 装完后列出你安装的 6 个 skill 让我确认。
+
 ## Skills
 
 | Skill | What it does |

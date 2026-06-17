@@ -8,12 +8,12 @@ Each skill is a self-contained `SKILL.md` that teaches an AI agent (Claude Code,
 
 | Skill | What it does |
 |---|---|
-| [`amazon-product-explorer`](amazon-product-explorer/SKILL.md) | 从 0 到 1 选品 / 蓝海利基挖掘。"what should I sell" / "find a blue-ocean niche" / "新品立项"。 |
-| [`pangolinfo-amazon-niche`](pangolinfo-amazon-niche/SKILL.md) | 类目树浏览 + 按销量/搜索量/退货率/竞争度筛利基。"browse Amazon category tree" / "find low-competition niches"。 |
-| [`pangolinfo-amazon-scraper`](pangolinfo-amazon-scraper/SKILL.md) | 抓商品/ASIN 详情、搜索列表、榜单、批量评论 VOC。"scrape this ASIN" / "get reviews for B0XXX"。 |
-| [`amazon-daily-competitor-radar`](amazon-daily-competitor-radar/SKILL.md) | 每日竞品监控:价格、排名、Buy Box 变化。"track ASIN X" / "daily radar"。 |
-| [`amazon-listing-optimization`](amazon-listing-optimization/SKILL.md) | Listing 文案优化:标题、五点、Search Terms、VOC 分析。"rewrite my listing"。 |
-| [`pangolinfo-ai-serp`](pangolinfo-ai-serp/SKILL.md) | Google 站外需求/舆情调研:SERP、AI Overview、引文来源、趋势对比。"search Google for X"。 |
+| [`amazon-product-explorer`](amazon-product-explorer/SKILL.md) | Product discovery & blue-ocean niche scouting from scratch. Triggers: "what should I sell", "find a blue-ocean niche", "is X category worth entering", "launch a new product". |
+| [`pangolinfo-amazon-niche`](pangolinfo-amazon-niche/SKILL.md) | Browse the Amazon category tree and filter niches by sales / search volume / return rate / competition. Triggers: "browse Amazon category tree", "find low-competition niches", "filter categories by metrics". |
+| [`pangolinfo-amazon-scraper`](pangolinfo-amazon-scraper/SKILL.md) | Scrape product/ASIN details, search listings, bestseller & new-release rankings, and bulk reviews for VOC. Triggers: "scrape this ASIN", "get reviews for B0XXX", "category bestsellers". |
+| [`amazon-daily-competitor-radar`](amazon-daily-competitor-radar/SKILL.md) | Daily competitor monitoring — price, rank, and Buy Box changes. Triggers: "track ASIN X", "daily radar", "did my ranking drop", "did I lose the Buy Box". |
+| [`amazon-listing-optimization`](amazon-listing-optimization/SKILL.md) | Listing copy optimization — title, bullets, Search Terms, and VOC analysis. Triggers: "rewrite my listing", "improve my title", "my conversion is low". |
+| [`pangolinfo-ai-serp`](pangolinfo-ai-serp/SKILL.md) | Off-Amazon demand & sentiment research via Google — SERP, AI Overview, citation sources, trend comparison. Triggers: "search Google for X", "what does AI Overview say", "compare A vs B trends". |
 
 ## Prerequisites
 

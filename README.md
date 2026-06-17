@@ -22,22 +22,17 @@ These skills call the Pangolinfo MCP server's tools. You need:
 1. The **Pangolinfo MCP server** connected to your AI client — see [pangolinfo-mcp](https://github.com/pangolinfo/pangolinfo-mcp).
 2. A **Pangolinfo API key** — get one at <https://www.pangolinfo.com> (new users receive free credits).
 
-The easiest way to install both the MCP server and these skills across 7 AI clients is the [one-line installer](https://github.com/pangolinfo/pangolinfo-installer).
-
 ## Install
 
-**Recommended — one-line installer** (handles MCP + skills for Claude Code, Cursor, Cline, Windsurf, Codex, Hermes, OpenClaw):
-
-See [pangolinfo-installer](https://github.com/pangolinfo/pangolinfo-installer).
-
-**Manual** — copy the skill folders into your client's skills directory. For Claude Code:
+Copy the skill folders into your AI client's skills directory. For Claude Code:
 
 ```bash
 git clone https://github.com/pangolinfo/pangolinfo-skills.git
-cp -r pangolinfo-skills/* ~/.claude/skills/pangolinfo/
+mkdir -p ~/.claude/skills/pangolinfo
+cp -r pangolinfo-skills/*/ ~/.claude/skills/pangolinfo/
 ```
 
-(Other clients use different skill paths — the installer covers them all.)
+Other clients use different skill paths — place each skill folder wherever your client loads skills from.
 
 ## License
 

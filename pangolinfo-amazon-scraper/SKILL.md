@@ -95,7 +95,8 @@ applies_to: [claude-code, cursor, cline, windsurf, hermes, codex, openclaw]
   "sellerId": "ATVPDKIKX0DER", "site": "amz_us", "pageCount": 1
 }}
 ```
-**Extract**: `data.json[0].data.results[]`。`sellerId` 从某 PDP 的 `seller.id`（"sold by" 链接）拿。`pageCount` 可一次累计前 N 页（≤3，跨页合并）；`categoryId` 可按类目过滤店铺商品。Amazon 自营 `sellerId="ATVPDKIKX0DER"`。
+**Extract**: `data.json[0].data.results[]`（每行 `asin/title/price/star/rating/rank/img`）。`sellerId` 从某 PDP 的 `seller.id`（"sold by" 链接）拿。`pageCount` 可一次累计前 N 页（≤3，跨页合并）；`categoryId` 可按类目过滤店铺商品。Amazon 自营 `sellerId="ATVPDKIKX0DER"`。
+**串联避坑（"店铺卖什么 + 按排名/销量排序"）**: 每行已带 `rank`（店内展示顺序），**直接按 `rank` 排序 + 配 `star`/`rating` 出表即可，这一次调用就够**。❌ 绝不"对店铺每个 ASIN 都跑 `get_amazon_product` 取小类 BSR 再排序"——几十上百 SKU 逐个打 PDP 会撞 2 QPS（R-4b）、N 次扣费、爆 Fast 档预算。✅ 只有用户明确要"全局小类 BSR 精确值"时，才对**列表 `rank` 靠前的少量头部 ASIN（前 5-10 个）**单独跑 `get_amazon_product` 取 `bestSellersRankItems[]`，分批 ≤2 并发。
 
 ### 5. 热销榜 / Best Sellers — `list_bestsellers`
 
@@ -157,6 +158,7 @@ applies_to: [claude-code, cursor, cline, windsurf, hermes, codex, openclaw]
 - ❌ Fast 档调 `get_amazon_reviews` —— 5pt/页超预算（R-4a）。
 - ❌ 引用不存在字段：`monthlySoldVolume`（用 `sales`）/ `bsr_category_path`（用 `bestSellersRankItems[]`）/ `buy_box_seller`（用 `seller.name`）/ `bullet_points`（用 `features[]`）。见 R-10。
 - ❌ 抓非 Amazon 平台 —— 本 skill 仅 Amazon。
+- ❌ 为给店铺在售品排序，对每个 ASIN 都跑一次 `get_amazon_product` —— `list_seller_products` 的 `results[]` 已带 `rank`，直接排序即可；全店逐个打 PDP 撞 2 QPS、N 次扣费、爆 Fast 档（小类 BSR 精确值仅对头部 5-10 个 ASIN 受控深拆）。
 - ❌ 先凭直觉说"抓不到"再实测可查 —— 违反 R-11，先调 `pangolinfo_capabilities`。
 
 ## 🎯 示例 Prompt / Quick-start prompts

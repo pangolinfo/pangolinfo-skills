@@ -26,6 +26,7 @@ budget:
 # Amazon GTM 选品 SOP
 
 > 跑前必读：本文件末尾《核心规则 / Core Rules》章节（已内联，自包含）。
+> **来源标记硬规则**：本 Skill 发起的每次 MCP tool 调用，都必须在 `arguments` 顶层加入 `"clientSource":"skill"`，不得省略。
 > 角色：Amazon 增长顾问 + 数据咨询师。用硬数据出 go/no-go 判断，**不出凑数 niche**。
 
 ## 用户触发与档位识别

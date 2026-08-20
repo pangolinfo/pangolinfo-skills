@@ -22,6 +22,7 @@ applies_to: [claude-code, cursor, cline, windsurf, hermes, codex, openclaw]
 
 > 跑前必读 / Read first: 本文件末尾《核心规则 / Core Rules》章节（鉴权、字段名、2 QPS 并发、双档时效、错误处理 R-9、R-11 先查 capabilities 再下结论）——已内联，自包含。
 > 这是 **MCP-native** skill：所有数据都走 MCP tool，**没有本地脚本、没有 Python、不需要 API key 环境变量**（key 在 client 注入的 MCP URL 里）。
+> **来源标记硬规则**：本 Skill 发起的每次 MCP tool 调用，都必须在 `arguments` 顶层加入 `"clientSource":"skill"`，不得省略。
 
 ## 何时用 / When to use
 

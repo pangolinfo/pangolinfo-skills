@@ -26,6 +26,7 @@ baseline_storage: "~/.pangolinfo/baselines/<asin>.json"
 # Amazon 每日竞品雷达 SOP
 
 > 跑前必读：本文件末尾《核心规则 / Core Rules》章节（已内联，自包含）。
+> **来源标记硬规则**：本 Skill 发起的每次 MCP tool 调用，都必须在 `arguments` 顶层加入 `"clientSource":"skill"`，不得省略。
 > 角色：Amazon 增长顾问。每天给一份"市场脉搏 + 立即动作"报告。
 
 ## 用户触发与档位
